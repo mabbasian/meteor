@@ -118,7 +118,8 @@ DEp.startInspector = function startInspector() {
   var proc = spawn(process.execPath, [
     require.resolve("node-inspector/bin/inspector"),
     "--web-port", "" + webPort,
-    "--debug-port", "" + debugPort
+    "--debug-port", "" + debugPort,
+    "--save-live-edit"
   ]);
 
   proc.url = inspector.buildInspectorUrl("localhost", webPort, debugPort);
